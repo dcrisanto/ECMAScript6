@@ -241,3 +241,30 @@ const greetingStart = teacher.padStart(10, 'hi ');
 const greetingEnd = greetingStart.padEnd(15, ' -------')
 console.log(greetingStart);
 console.log(greetingEnd);
+
+const nameStudent = 'Dorelly';
+
+const newPromise = () => {
+    return new Promise((resolve, reject) => {
+        (true) ? setTimeout(() => resolve(`Hello ${nameStudent}`), 1000) 
+        : reject(new Error('Test Error'))
+    });
+}
+
+const async1 = async () => {
+    const newPromiseAsync = await newPromise();
+    console.log(newPromiseAsync);
+}
+
+async1();
+
+const anotherFunctionAsync = async () => {
+    try{
+        const newPromiseAsync = await newPromise();
+        console.log(newPromiseAsync);
+    } catch (err){
+        console.log(err);
+    }
+};
+
+anotherFunctionAsync();
