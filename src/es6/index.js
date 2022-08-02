@@ -1,3 +1,5 @@
+//import { greeting } from "./module.js";
+
 function newFunction(name, age, country){
     var name = name || 'Oscar';
     var age = age || '31';
@@ -158,3 +160,42 @@ helloPromise()
     countCows()
         .then(response => console.log(response))
         .catch(error => console.log(error))
+
+/**Clases, Módulos y Generadores */
+
+class calculator {
+    constructor({number1, number2}) {
+        this.number1 = number1;
+        this.number2 = number2;
+    }
+    add() {
+        const result = this.number1 + this.number2;
+        return result;
+    }
+}
+
+const operator1 = new calculator({
+    number1: 20,
+    number2: 30
+})
+
+//greeting();
+
+//Generators
+
+
+function* helloWorld() {
+    if(true) {
+        yield 'Hello Dorelly';
+    }
+
+    if(true) {
+        yield 'World'
+    }
+}
+
+
+const generatorsHello = helloWorld();
+console.log(generatorsHello.next().value);
+console.log(generatorsHello.next().value);
+console.log(generatorsHello.next().value);
