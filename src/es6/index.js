@@ -199,3 +199,21 @@ const generatorsHello = helloWorld();
 console.log(generatorsHello.next().value);
 console.log(generatorsHello.next().value);
 console.log(generatorsHello.next().value);
+
+/*ES7 */
+
+const numberList = [1, 13, 5, 7, 9, 76];
+
+const includeNumber = numberList => {
+    if(numberList.includes(3)) {
+        console.log('El array incluye el número 3');
+    } else {
+        console.warn('El array debe incluir el número 3');
+    }
+};
+
+includeNumber(numberList);
+
+const base = 4;
+const exponent = 2;
+const result = base**exponent;
