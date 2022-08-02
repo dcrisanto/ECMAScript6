@@ -217,3 +217,27 @@ includeNumber(numberList);
 const base = 4;
 const exponent = 2;
 const result = base**exponent;
+
+/* ES8 */
+
+const data = {
+    frontend: 'Dorelly',
+    backend: 'Javier',
+    design: 'Fabiola'
+};
+
+//devuelve array de arrays
+const entries = Object.entries(data);
+console.log(entries);
+//así podemos usar la propiedad length de array
+console.log(entries.length);
+//devolver los valores de un objeto
+const values = Object.values(data);
+console.log(values);
+
+//padding: agregar texto a un string
+const teacher = 'Cecilia';
+const greetingStart = teacher.padStart(10, 'hi ');
+const greetingEnd = greetingStart.padEnd(15, ' -------')
+console.log(greetingStart);
+console.log(greetingEnd);
