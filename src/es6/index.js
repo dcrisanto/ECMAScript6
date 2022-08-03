@@ -310,3 +310,33 @@ const match = regexData.exec('2022-08-02');
 const year = match[1];
 const month = match[2];
 const day = match[3];
+
+//es10
+//flat: matriz
+const arrayNumbers = [1,2,3,4,5,6];
+const arrayFlat = arrayNumbers.flat(2);
+//flatMap: mapear cada elemento
+const arrayFlatMap = arrayNumbers.flatMap(element => [element, element*2]);
+
+//trim: elimianar los espacios en blanco de un string
+const nameStudentPlatzi = '             Dorelly del Rosario         ';
+const stringTrimStart = nameStudentPlatzi.trimStart();
+const stringTrimEnd = stringTrimStart.trimEnd();
+
+//error de cath: lo tenemos disponible si recibirlo como parámetro en catch
+try{
+
+}catch{
+    error;
+    console.log(error);
+}
+
+//fromEntries: de array de arrays nos devuelve un objeto
+const arrayEntries = [['name', 'Dorelly'], ['age', 33]];
+const objctFromEntries = Object.fromEntries(arrayEntries);
+
+//symbol: permite regresar la descripcion opcional del Symbol
+const stringSymbol = 'My symbol';
+const symbol = Symbol(stringSymbol);
+const descriptionSymbol = symbol.description;
+
