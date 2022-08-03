@@ -386,4 +386,51 @@ const stringNull = null ?? 'default string';
 const objectNotData = {};
 console.log(objectNotData?.file?.email);
 
+//es12: lanzadas en 2021
 
+//replaceAll: reemplaza todas las coincidencias encontradas
+//replace: reemplaza la primera coincidencia encontrada
+const string_1 = 'JavaScript es uno de los lenguajes que debes comenzar a estudiar, JavaScript';
+const replacedString = string_1.replace('JavaScript', 'Java');
+const replacedAllString = string_1.replaceAll('JavaScript', 'Java');
+
+//indicar que un método es privado, con el símbolo #
+class Message {
+    constructor({value}) {
+        this.value = value;
+    }
+
+    #show(newValue) {
+        return this.value = newValue;
+    }
+};
+
+const message1 = new Message({value: 'prueba'})
+
+//promise any: es otra forma de manejar varias promesas, que retornará la primera promesa que sea resuelta y se rechazará si todas las promesas son rechazadas.
+
+Promise.any([promise_1, promise_2, promise_3])
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+
+
+//Un objeto WeakRef consiste en mantener una referencia débil a otro objeto, para evitar que ese objeto sea eliminado por el Garbage Collection{target="_blank"}.
+
+class anyClass {
+    constructor({element}) {
+        this.ref = new WeakRef(element);
+    }
+}
+
+//operadores de asignación
+//Asignación AND (&&=), en caso de cumplirse una verdad, asigna un valor a una variable.
+//Asignación OR (||=), en caso de cumplirse una falsedad, asigna un valor a una variable.
+//Asignación Nullish (??=), en caso de cumplirse undefined o null, asigna un valor a una variable.
+let isTrue = true;
+let isFalse = false;
+let valueUndefined = undefined;
+const assignment = 'asignando valor'
+
+console.log(isTrue &&= assignment);
+console.log(isFalse ||= assignment);
+console.log(valueUndefined ??= assignment);
