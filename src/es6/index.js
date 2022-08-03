@@ -340,3 +340,50 @@ const stringSymbol = 'My symbol';
 const symbol = Symbol(stringSymbol);
 const descriptionSymbol = symbol.description;
 
+//es11 lanzada en el 2020
+//dinamic import
+const button = document.querySelector('#btn');
+
+const asyncImport = async () => {
+    const module = await import('./module.js');
+    module.greeting();
+};
+
+button.addEventListener('click', asyncImport);
+
+//bigNumber
+//el valor más grande que podemos representar
+const bigNumber = 9987899876543987n; 
+const anotherBigNumber = BigInt(9987899876543987);
+
+//manejo de varias promesas
+const promise_1 = new Promise((resolve, reject) => {
+    (true) ?
+    resolve('resolve ok')
+    :
+    reject('ups not resolve')
+});
+
+const promise_2 = new Promise((resolve, reject) => reject('rechazada'));
+const promise_3 = new Promise((resolve, reject) => resolve('resolve ok'));
+
+//promise all será rechazada en el momento que se rechace una de estas promesas
+Promise.all([promise_1, promise_2, promise_3])
+    .then(response => console.log(response))
+
+//promise allSettled: no importa el estado de las promesas esperará a que todas sean resueltas
+Promise.allSettled([promise_1, promise_2, promise_3])
+    .then(response => console.log(response))
+
+//globalThis
+console.log(window);
+console.log(globalThis);
+
+//Nullish, ?? pregunta si el valor es nulo y de ser el caso devuelve un valor por defecto
+const stringNull = null ?? 'default string';
+
+//Optional chaining (?.): se usa ? para que no rompa la aplicación y nos devuelve undefined de no tener la popiedad a la que se quiere acceder
+const objectNotData = {};
+console.log(objectNotData?.file?.email);
+
+
